@@ -148,6 +148,8 @@
     <Compile Include="DataClasses\Concrete\Post.cs" />
     <Compile Include="DataClasses\Concrete\Tag.cs" />
     <Compile Include="DataClasses\EfConfiguration.cs" />
+    <Compile Include="DataClasses\Identity\AppRole.cs" />
+    <Compile Include="DataClasses\Identity\AppUser.cs" />
     <Compile Include="Startup\DataLayerInitialise.cs" />
     <Compile Include="DataClasses\SampleWebAppDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,9 +166,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Startup\Internal\BlogsContextMedium.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataClasses\Identity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

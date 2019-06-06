@@ -34,13 +34,15 @@ using System.Threading.Tasks;
 using DataLayer.DataClasses.Concrete;
 using DataLayer.DataClasses.Concrete.Helpers;
 using GenericServices;
+using Microsoft.AspNet.Identity.EntityFramework;
+using DataLayer.DataClasses.Identity;
 
 [assembly: InternalsVisibleTo("Tests")]
 
 namespace DataLayer.DataClasses
 {
 
-    public class SampleWebAppDb : DbContext, IGenericServicesDbContext
+    public class SampleWebAppDb : IdentityDbContext<AppUser>, IGenericServicesDbContext
     {
         internal const string NameOfConnectionString = "SampleWebAppDb";
 
