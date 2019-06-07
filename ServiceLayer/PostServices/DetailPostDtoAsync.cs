@@ -96,6 +96,9 @@ namespace ServiceLayer.PostServices
         /// </summary>
         public DateTime LastUpdatedUtc { get { return DateTime.SpecifyKind(LastUpdated, DateTimeKind.Utc); } }
 
+        // Likes Property
+        public int Likes { get; set; }
+
         public string TagNames { get { return string.Join(", ", Tags.Select(x => x.Name)); } }
 
         //ctor
