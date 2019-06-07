@@ -152,5 +152,12 @@ namespace SampleWebApp.Controllers
             TempData["message"] = "Successfully reset the blogs data";
             return RedirectToAction("Index");
         }
+
+
+        // To perform Like
+        public ActionResult Like(int id)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
