@@ -58,6 +58,9 @@ namespace ServiceLayer.PostServices
         [ScaffoldColumn(false)]
         public DateTime LastUpdated { get;  set; }
 
+        // Likes Property
+        public int Likes { get; set; }
+
         /// <summary>
         /// When it was last updated in DateTime format
         /// </summary>

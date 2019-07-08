@@ -162,5 +162,30 @@ namespace SampleWebApp.Controllers
             TempData["message"] = "Successfully reset the blogs data";
             return RedirectToAction("Index");
         }
+
+
+        // To perform Like Increase
+        public ActionResult Like(int id, IUpdateSetupService serviceSetup, IUpdateService serviceUpdate)
+        {
+            var dto = serviceSetup.GetOriginal<DetailPostDto>(id).Result;
+
+            if (!ModelState.IsValid)
+                //model errors so return immediately
+                return View(serviceUpdate.ResetDto(dto));
+
+            // increase the number of likes
+            dto.Likes++;
+
+            var response = serviceUpdate.Update(dto);
+            if (response.IsValid)
+            {
+                TempData["message"] = response.SuccessMessage;
+                return RedirectToAction("Index");
+            }
+
+            //else errors, so copy the errors over to the ModelState and return to view
+            response.CopyErrorsToModelState(ModelState, dto);
+            return View(dto);
+        }
     }
 }

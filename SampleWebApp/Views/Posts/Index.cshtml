@@ -47,6 +47,11 @@
         <th>
             @Html.DisplayNameFor(model => model.TagNames)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Likes)
+        </th>
+
         <th></th>
     </tr>
 
@@ -64,10 +69,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TagNames)
             </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Likes)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.PostId }) |
                 @Html.ActionLink("Details", "Details", new { id=item.PostId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.PostId })
+                @Html.ActionLink("Delete", "Delete", new { id=item.PostId }) |
+
+                @Html.ActionLink("Like", "Like", new { id = item.PostId })
             </td>
         </tr>
     }

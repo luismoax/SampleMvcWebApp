@@ -48,6 +48,9 @@ namespace DataLayer.DataClasses.Concrete
 
         public ICollection<Tag> Tags { get; set; }
 
+        // Likes Property
+        public int Likes { get; set; }
+
         public override string ToString()
         {
             return string.Format("PostId: {0}, Title: {1}, BlogId: {2}, Blogger: {3}, AllocatedTags: {4}", 
